@@ -1,4 +1,4 @@
-package com.chx.tools.controller;
+package com.chx.tools.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

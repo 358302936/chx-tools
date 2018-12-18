@@ -1,4 +1,4 @@
-package com.chx.tools.controller.genterator;
+package com.chx.tools.web.genterator;
 
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
@@ -57,7 +57,7 @@ public class Genterator {
         pc.setMapper("dao");
         pc.setService("service");
         pc.setServiceImpl("service.impl");
-//        pc.setController("controller");
+//        pc.setController("web");
 
         mpg.setPackageInfo(pc);
         // 执行生成

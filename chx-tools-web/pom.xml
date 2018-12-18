@@ -39,7 +39,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.chx.tools.controller.Application</mainClass>
+                    <mainClass>com.chx.tools.web.Application</mainClass>
                 </configuration>
                 <executions>
                     <execution>
