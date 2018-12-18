@@ -17,7 +17,11 @@
             <groupId>com.chx</groupId>
             <artifactId>chx-tools-dal</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>com.chx</groupId>
+            <artifactId>chx-tools-common</artifactId>
+        </dependency>
+       <!-- 引用springframework -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
