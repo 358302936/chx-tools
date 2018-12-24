@@ -1,6 +1,7 @@
 package com.chx.tools.web.controller;
 
 import com.chx.tools.common.base.BaseResult;
+import org.apache.hadoop.hive.ql.metadata.Hive;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,12 @@ public class UserController {
      */
     @RequestMapping(value = "/getInfo",method = RequestMethod.GET)
     public BaseResult getUserInfo(){
+        return BaseResult.ok();
+    }
+
+    @RequestMapping(value = "/testHive",method = RequestMethod.GET)
+    public BaseResult testHive(){
+
         return BaseResult.ok();
     }
 
