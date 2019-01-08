@@ -4,6 +4,7 @@ import com.chx.tools.common.annotation.JobLog;
 import com.xxl.job.core.biz.model.ReturnT;
 import com.xxl.job.core.handler.IJobHandler;
 import com.xxl.job.core.handler.annotation.JobHandler;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,10 +13,12 @@ import org.springframework.stereotype.Component;
  **/
 @JobHandler(value = "demoJob")
 @Component
+@Slf4j
 public class DemoJob extends IJobHandler {
     @Override
-    @JobLog(description = "处理最近学习缓存数据")
+    @JobLog(description = "定时器demo")
     public ReturnT<String> execute(String s) throws Exception {
+        log.info("定时器执行了……");
         return ReturnT.SUCCESS;
     }
 }

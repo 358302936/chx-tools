@@ -24,6 +24,10 @@
             <groupId>com.chx</groupId>
             <artifactId>chx-tools-service</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.chx</groupId>
+            <artifactId>chx-tools-timer</artifactId>
+        </dependency>
        <!-- 引用springframework -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -42,27 +46,6 @@
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity-engine-core</artifactId>
             <version>2.0</version>
-        </dependency>
-         <!-- 大数据 -->
-        <dependency>
-            <groupId>org.pentaho</groupId>
-            <artifactId>pentaho-aggdesigner-algorithm</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hive</groupId>
-            <artifactId>hive-jdbc</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hive</groupId>
-            <artifactId>hive-exec</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.pentaho</groupId>
-            <artifactId>pentaho-aggdesigner-algorithm</artifactId>
         </dependency>
     </dependencies>
     <build>

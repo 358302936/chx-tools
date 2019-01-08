@@ -1,7 +1,8 @@
 package com.chx.tools.web.controller;
 
 import com.chx.tools.common.base.BaseResult;
-import org.apache.hadoop.hive.ql.metadata.Hive;
+import com.chx.tools.timer.job.DemoJob;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/api/user")
 public class UserController {
 
+    @Autowired
+    private DemoJob demoJob;
+
     /**
      * 获得用户信息
      * @return
@@ -23,9 +27,13 @@ public class UserController {
         return BaseResult.ok();
     }
 
-    @RequestMapping(value = "/testHive",method = RequestMethod.GET)
+    @RequestMapping(value = "/testJob",method = RequestMethod.GET)
     public BaseResult testHive(){
-
+        try {
+            demoJob.execute("");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return BaseResult.ok();
     }
 
