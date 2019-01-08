@@ -9,16 +9,17 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>chx-tools-common</artifactId>
-
+    <artifactId>chx-tools-timer</artifactId>
     <dependencies>
+        <!-- 本系统模板依赖 -->
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
+            <groupId>com.chx</groupId>
+            <artifactId>chx-tools-common</artifactId>
         </dependency>
+        <!-- xxl-job -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <groupId>com.xuxueli</groupId>
+            <artifactId>xxl-job-core</artifactId>
         </dependency>
     </dependencies>
 

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false" scan="true" scanPeriod="60 seconds">
+    <property resource="application-rd.properties"/>
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}|${app.name}|%-5level|%logger{56}.%method:%L|%msg%n
+            </pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+    <appender name="mainAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.home}/main.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.home}/main.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <MaxHistory>15</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}|${app.name}|%-5level|%logger{56}.%method:%L|%msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    <appender name="errorAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.home}/error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.home}/error.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <MaxHistory>15</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}|${app.name}|%-5level|%logger{56}.%method:%L|%msg%n
+            </pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+    <appender name="daoAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.home}/dao.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.home}/dao.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <MaxHistory>7</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}|${app.name}|%-5level|%logger{56}.%method:%L|%msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    <appender name="serviceAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.home}/service.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.home}/service.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <MaxHistory>7</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}|${app.name}|%-5level|%logger{56}.%method:%L|%msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    <appender name="webAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.home}/web.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.home}/web.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <MaxHistory>7</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}|${app.name}|%-5level|%logger{56}.%method:%L|%msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    <appender name="alarmAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.home}/alarm.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.home}/alarm.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <MaxHistory>7</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}|${app.name}|%-5level|%logger{56}.%method:%L|%msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    <logger name="com.chx.tools.dal" level="${log.level}" additivity="false">
+        <appender-ref ref="daoAppender"/>
+        <appender-ref ref="errorAppender"/>
+    </logger>
+    <logger name="com.chx.tools.service" level="${log.level}" additivity="false">
+        <appender-ref ref="serviceAppender"/>
+        <appender-ref ref="errorAppender"/>
+    </logger>
+    <logger name="com.chx.tools.web" level="${log.level}" additivity="false">
+        <appender-ref ref="webAppender"/>
+        <appender-ref ref="errorAppender"/>
+    </logger>
+    <root level="${log.level}">
+        <appender-ref ref="stdout"/>
+        <appender-ref ref="mainAppender"/>
+    </root>
+</configuration>
