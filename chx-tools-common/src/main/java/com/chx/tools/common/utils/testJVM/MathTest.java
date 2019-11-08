@@ -19,5 +19,6 @@ public class MathTest {
     public static void main(String[] args) {
         MathTest mathTest = new MathTest();
         mathTest.compute();
+        System.out.println("test");
     }
 }
